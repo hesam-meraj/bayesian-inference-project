@@ -73,21 +73,21 @@ print('''
 
     ''')
 
-# def estimate_normalizing_constant(samples, target, bounds):
+def estimate_normalizing_constant(samples, target, bounds):
    
-#     x_uniform = np.random.uniform(bounds[0], bounds[1], size=len(samples))
+    x_uniform = np.random.uniform(bounds[0], bounds[1], size=len(samples))
     
-#     Z_estimate = (bounds[1] - bounds[0]) * np.mean(target(x_uniform))
+    Z_estimate = (bounds[1] - bounds[0]) * np.mean(target(x_uniform))
     
-#     return Z_estimate
+    return Z_estimate
 
-# Z_estimate = estimate_normalizing_constant(samples_task1, f, (0, 100))
+Z_estimate = estimate_normalizing_constant(samples_task1, f, (0, 100))
 
-# Z_numerical, _ = quad(f, 0, 100)
+Z_numerical, _ = quad(f, 0, 100)
 
-# print(f"Estimated normalizing constant (Z): {Z_estimate:.4f}")
-# print(f"Numerically integrated Z: {Z_numerical:.4f}")
-# print(f"Relative error: {abs(Z_estimate - Z_numerical)/Z_numerical:.2%}")
+print(f"Estimated normalizing constant (Z): {Z_estimate:.4f}")
+print(f"Numerically integrated Z: {Z_numerical:.4f}")
+print(f"Relative error: {abs(Z_estimate - Z_numerical)/Z_numerical:.2%}")
 
 
 

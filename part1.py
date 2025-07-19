@@ -53,8 +53,8 @@ def metropolis_hastings(f, proposal_std, initial_x, n_samples):
     return np.array(samples)
 
 n_samples = 100000
-proposal_std = 5
-initial_x = 50
+proposal_std = 1
+initial_x = 75
 
 samples = metropolis_hastings(f, proposal_std, initial_x, n_samples)
 
