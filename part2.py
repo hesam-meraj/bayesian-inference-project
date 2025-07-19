@@ -19,17 +19,14 @@ first method : IMPORTANT SAMPLING (IS) with uniform proposal
     2 ) Z_hat = 1/N sum(wi over 1 to N) = 100/N * sum(f(xi) over 1 to N)
 
 '''
-# n_samples = N
 plt.hist(samples)
 plt.show()
 hist_counts, bin_edges = np.histogram(samples, bins=100, range=(0, 100), density=True)
 
 bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
 
-# Corresponding f(x) values
 f_vals = f(bin_centers)
 
-# Estimate Z as f(x) / estimated p(x) => average this over the domain
 Z_estimates = f_vals / hist_counts
 Z_est = np.mean(Z_estimates[np.isfinite(Z_estimates)])  # Avoid div-by-zero or inf
 print(f"Estimated Z from samples: {Z_est:.4f}")
